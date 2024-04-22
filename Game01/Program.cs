@@ -1,7 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
-
-// start again 
+﻿// start again 
 bool playGame = true;
 void StartAgain()
 {
@@ -23,7 +20,7 @@ void StartAgain()
     }
 };
 
-// Find word Game
+// init game
 void InitGame()
 {
     if (!playGame) return;
