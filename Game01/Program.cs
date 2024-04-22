@@ -3,7 +3,7 @@ Console.WriteLine("Hello, World!");
 
 // start again 
 bool playGame = true;
-static void StartAgain(ref bool playGame)
+void StartAgain()
 {
     Console.WriteLine("Try again?");
     var userInput = Console.ReadKey();
@@ -12,19 +12,19 @@ static void StartAgain(ref bool playGame)
     if (userInput.Key == ConsoleKey.Enter)
     {
         Console.WriteLine("You Start The Game Again!");
-        InitGame(playGame);
+        InitGame();
     }
     else
     {
         Console.Clear();
         Console.WriteLine("EXIT GAME");
         playGame = false;
-        InitGame(playGame);
+        InitGame();
     }
 };
 
 // Find word Game
-static void InitGame(bool playGame)
+void InitGame()
 {
     if (!playGame) return;
 
@@ -47,7 +47,7 @@ static void InitGame(bool playGame)
             {
                 correctAnswer = true;
                 Console.WriteLine("Correct Answer! YEHOOOOO");
-                StartAgain(ref playGame);
+                StartAgain();
             }
             else
             {
@@ -59,7 +59,7 @@ static void InitGame(bool playGame)
             {
                 Console.Clear();
                 Console.WriteLine($"You LOST! The word was \"{hiddenWord}\"");
-                StartAgain(ref playGame);
+                StartAgain();
             }
 
         }
@@ -67,16 +67,16 @@ static void InitGame(bool playGame)
         {
             Console.Clear();
             Console.WriteLine("Invalid input. Please enter a string value.");
-            StartAgain(ref playGame);
+            StartAgain();
         }
         catch (Exception e)
         {
             Console.Clear();
             Console.WriteLine("An error occurred: " + e.Message);
-            StartAgain(ref playGame);
+            StartAgain();
         }
 
     };
 }
 
-if(playGame) InitGame(playGame);
+if(playGame) InitGame();
